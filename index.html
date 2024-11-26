@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>Proyecto Romántico</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <!-- Contenido principal -->
+  <div id="main-content">
+    <div class="container">
+      <div class="glass">
+        <div class="shine"></div>
+      </div>
+      <div class="thorns">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <div class="leaves">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <div class="petals">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <div class="deadPetals">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Música de fondo -->
+  <audio id="background-music" loop>
+    <source src="tu_musica.mp3" type="audio/mpeg">
+    Tu navegador no soporta el elemento de audio.
+  </audio>
+
+  <script>
+    const audio = document.getElementById('background-music');
+
+    // Reproducción automática de música al cargar la página
+    window.addEventListener('load', () => {
+      audio.play().catch(() => {
+        console.log('Requiere interacción del usuario para reproducir la música.');
+      });
+    });
+
+    // Reproducir música al tocar o hacer clic en la pantalla
+    document.body.addEventListener('click', () => {
+      if (audio.paused) {
+        audio.play();
+      }
+    });
+
+    // También funciona para toques en dispositivos móviles
+    document.body.addEventListener('touchstart', () => {
+      if (audio.paused) {
+        audio.play();
+      }
+    });
+  </script>
+</body>
+</html>
